@@ -1,2 +1,7 @@
-mountpoints:
-  /: https://drive.google.com/drive/folders/1-unu5EgXQzTMls7-Tk1unNp50VTyPJRb
+mounts:
+  - name: library-content
+    description: "Content for Online Library"
+    path: /library
+    type: drive
+    options:
+      url: "https://drive.google.com/drive/folders/1-unu5EgXQzTMls7-Tk1unNp50VTyPJRb?usp=drive_link"
