@@ -37,7 +37,8 @@
   --heading-font-size-xs: 22px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 54px;
+  --transition-speed: 0.3s; 
 }
 
 /* fallback fonts */
@@ -110,6 +111,7 @@ h6 {
   font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
+  box-shadow: 0.5;
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -144,6 +146,25 @@ pre {
 
 main > div {
   margin: 40px 16px;
+  /* background-color: var(--light-color); Subtle background color */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(45, 14, 14, 0.1);
+}
+main > div p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.8; /* Improve spacing between lines */
+  color: var(--text-color);
+  margin-bottom: 20px; /* Add spacing between paragraphs */
+}
+main > div a {
+  font-size: var(--body-font-size-m);
+  font-weight: bold;
+  color: var(--link-color);
+  text-decoration: none;
+  padding: 10px 20px; /* Add padding to create a button effect */
+  border: 2px solid var(--link-color); /* Add a border for emphasis */
+  border-radius: 5px; /* Round the edges */
+  transition: background-color var(--transition-speed), color var(--transition-speed); /* Smooth hover effect */
 }
 
 input,
@@ -218,8 +239,8 @@ main img {
 
 .icon {
   display: inline-block;
-  height: 24px;
-  width: 24px;
+  height: 15px;
+  width: 15px;
 }
 
 .icon img {
@@ -254,4 +275,54 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+ul {
+  list-style-type: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin: 8px 0; /* Adds spacing between items */
+}
+
+ul li ul {
+  margin-left: 20px; /* Indents nested list items */
+}
+
+ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+}
+
+ul li a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.nav-container {
+  padding: 16px;
+  background-color: rgba(192, 70, 70, 0.7); /* Semi-transparent black for contrast */
+  color: var(--background-color); /* White text */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 300px;
+  font-size: var(--heading-font-size-m); /* Larger text size */
+  font-family: var(--heading-font-family); /* Heading font */
+  box-shadow: 0px 4px 8px rgba(159, 62, 62, 0.2); /* Optional shadow */
+  position: absolute; /* Absolute positioning for placement */
+  top: 20px; /* Adjust position from the top */
+  left: 20px; /* Adjust position from the left */
+}
+
+@media (max-width: 768px) {
+  ul {
+    font-size: var(--body-font-size-xs);
+  }
+
+  .nav-container {
+    max-width: 100%;
+    padding: 8px;
+    font-size: var(--body-font-size-xs); /* Responsive font size */
+  }
 }
