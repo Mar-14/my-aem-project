@@ -24,17 +24,17 @@
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xxl: 50px;
+  --heading-font-size-xl: 40px;
+  --heading-font-size-l: 32px;
+  --heading-font-size-m: 24px;
+  --heading-font-size-s: 20px;
+  --heading-font-size-xs: 18px;
 
   /* nav height */
   --nav-height: 54px;
@@ -72,13 +72,13 @@
 }
 
 body {
-  display: none;
+  display: block;
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 body.appear {
@@ -92,6 +92,10 @@ header {
 header .header,
 footer .footer {
   visibility: hidden;
+  padding: 20px; 
+  background-color: var(--dark-color); 
+  color: var(--light-color); 
+  text-align: center; 
 }
 
 header .header[data-block-status="loaded"],
@@ -233,7 +237,7 @@ button.secondary {
 
 main img {
   max-width: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
@@ -294,6 +298,7 @@ ul li a {
   color: var(--text-color);
   text-decoration: none;
   font-size: var(--body-font-size-s);
+  transition: color var(--transition-speed);
 }
 
 ul li a:hover {
@@ -302,17 +307,18 @@ ul li a:hover {
 }
 
 .nav-container {
-  padding: 16px;
-  background-color: rgba(192, 70, 70, 0.7); /* Semi-transparent black for contrast */
+  padding: 12px;
+  background-color: rgba(15, 220, 159, 0.7); /* Semi-transparent black for contrast */
   color: var(--background-color); /* White text */
   border-radius: 8px; /* Rounded corners */
   max-width: 300px;
   font-size: var(--heading-font-size-m); /* Larger text size */
   font-family: var(--heading-font-family); /* Heading font */
-  box-shadow: 0px 4px 8px rgba(159, 62, 62, 0.2); /* Optional shadow */
+  box-shadow: 0px 4px 8px rgba(21, 19, 19, 0.2); /* Optional shadow */
   position: absolute; /* Absolute positioning for placement */
-  top: 20px; /* Adjust position from the top */
-  left: 20px; /* Adjust position from the left */
+  top: 0; /* Adjust position from the top */
+  left: 0; /* Adjust position from the left */
+  z-index: 10;
 }
 
 @media (max-width: 768px) {
