@@ -13,8 +13,8 @@
 :root {
   /* colors */
   --background-color: rgb(197, 201, 162);
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
+  --light-color: #e4dbdb;
+  --dark-color:  rgb(197, 201, 162);
   --text-color: #4f1d1d;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
@@ -54,7 +54,7 @@
   src: local(Arial);
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   :root {
     /* body sizes */
     --body-font-size-m: 18px;
@@ -89,12 +89,18 @@ header {
   height: var(--nav-height);
 }
 
-header .header,
+header .header{
+  padding: 20px;
+  background-color: var(--dark-color); /* Dark background for the header */
+  color: rgb(4, 8, 7); /* Text color is black */
+  text-align: center;
+}
+
 footer .footer {
   visibility: hidden;
   padding: 20px; 
   background-color: var(--dark-color); 
-  color: var(--light-color); 
+  color: black; 
   text-align: center; 
 }
 
@@ -115,7 +121,23 @@ h6 {
   font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
-  box-shadow: 0.5;
+}
+h1 {
+  font-size: 2em; /* Adjust font size as needed */
+  color: black; /* Set text color */
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+  margin: 0; /* Avoid additional spacing issues */
+  padding: 10px; /* Add padding if necessary */
+  background-color: rgba(122, 5, 5, 0.6); /* Slight white background for contrast */
+  border-radius: 5px; /* Soften edges of the background */
+  display: inline-block; 
+  text-align: center;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+    padding: 5px;
+  }
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -152,7 +174,7 @@ main > div {
   margin: 40px 16px;
   /* background-color: var(--light-color); Subtle background color */
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(45, 14, 14, 0.1);
+  box-shadow: 0px 4px 8px rgba(135, 19, 19, 0.1);
 }
 main > div p {
   font-size: var(--body-font-size-m);
@@ -249,7 +271,7 @@ main img {
 
 .icon img {
   height: 100%;
-  width: 100%;
+  width: 50%;
 }
 
 /* sections */
@@ -309,16 +331,17 @@ ul li a:hover {
 .nav-container {
   padding: 12px;
   background-color: rgba(15, 220, 159, 0.7); /* Semi-transparent black for contrast */
-  color: var(--background-color); /* White text */
+  color: rgb(66, 18, 18);
   border-radius: 8px; /* Rounded corners */
   max-width: 300px;
   font-size: var(--heading-font-size-m); /* Larger text size */
   font-family: var(--heading-font-family); /* Heading font */
   box-shadow: 0px 4px 8px rgba(21, 19, 19, 0.2); /* Optional shadow */
-  position: absolute; /* Absolute positioning for placement */
+  position: relative; 
   top: 0; /* Adjust position from the top */
   left: 0; /* Adjust position from the left */
   z-index: 10;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
